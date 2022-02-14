@@ -21,8 +21,23 @@ let menuMobile = document.querySelector('.header');
 
 burger.addEventListener('click', () => {
   menuMobile.style.display ='block';
-})
+});
 
 closeMenu.addEventListener('click', () => {
   menuMobile.style.display ='none';
-})
+});
+
+const modalWindow = document.querySelector('.modal');
+const buttonModal = document.querySelector('.main_button_play');
+
+buttonModal.addEventListener('click', (e) => {
+  modalWindow.classList.add('active');
+});
+
+modalWindow.addEventListener('click', (e) => {
+  const isModal = e.target.closest('.modal_inner');
+
+  if (!isModal){
+      modalWindow.classList.remove('active');
+  }
+});
